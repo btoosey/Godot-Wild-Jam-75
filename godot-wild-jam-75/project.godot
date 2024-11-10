@@ -30,6 +30,10 @@ directories/dtl_directory={}
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/fonts/ChillPixels-Maximal.otf"
+
 [input]
 
 dialogic_default_action={
