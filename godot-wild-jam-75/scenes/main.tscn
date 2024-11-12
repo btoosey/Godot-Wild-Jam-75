@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=3 format=3 uid="uid://dk1hgbkj7becm"]
+
+[ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
+[ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(322, 180)
+texture = ExtResource("1_dxcp6")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+script = ExtResource("2_jri7b")
+scrolling = true
