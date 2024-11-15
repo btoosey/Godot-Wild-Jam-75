@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChimpTestNumberData" load_steps=4 format=3 uid="uid://b04cxstjf6kwm"]
+
+[ext_resource type="Script" path="res://custom_resources/chimp_test_number_data.gd" id="1_1j7bw"]
+[ext_resource type="Texture2D" uid="uid://fovhcdwj5j6f" path="res://assets/sprites/chimp-test/numbers.png" id="2_eylr5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clg6g"]
+atlas = ExtResource("2_eylr5")
+region = Rect2(160, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_1j7bw")
+test_number_value = 6
+test_number_sprite = SubResource("AtlasTexture_clg6g")

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=10 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
+[ext_resource type="PackedScene" uid="uid://cc6oa5fixp7o" path="res://scenes/chimp_test_number.tscn" id="3_1shyd"]
+[ext_resource type="Script" path="res://scenes/chimp_test.gd" id="3_th0ef"]
+[ext_resource type="Resource" uid="uid://ca6b5sgeguule" path="res://data/chimp_test_number_1.tres" id="4_wkw6f"]
+[ext_resource type="Resource" uid="uid://bmknl637urgst" path="res://data/chimp_test_number_2.tres" id="6_0b54d"]
+[ext_resource type="Resource" uid="uid://c2dmvjlwlonnf" path="res://data/chimp_test_number_3.tres" id="7_j07kl"]
+[ext_resource type="Resource" uid="uid://d131ixsgavk2n" path="res://data/chimp_test_number_4.tres" id="8_4r180"]
+[ext_resource type="Resource" uid="uid://bcqhjoktu0u1s" path="res://data/chimp_test_number_5.tres" id="9_tqyxc"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,3 +19,87 @@ texture = ExtResource("1_dxcp6")
 [node name="MainCamera" type="Camera2D" parent="."]
 script = ExtResource("2_jri7b")
 scrolling = true
+
+[node name="ChimpTest" type="Node2D" parent="."]
+position = Vector2(-56, 183)
+script = ExtResource("3_th0ef")
+
+[node name="Stages" type="Node2D" parent="ChimpTest"]
+
+[node name="Stage1" type="Node2D" parent="ChimpTest/Stages"]
+visible = false
+
+[node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
+position = Vector2(-95, -42)
+chimp_test_number_data = ExtResource("4_wkw6f")
+
+[node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
+position = Vector2(34, 19)
+chimp_test_number_data = ExtResource("6_0b54d")
+
+[node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
+position = Vector2(-61, 50)
+chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="Stage2" type="Node2D" parent="ChimpTest/Stages"]
+visible = false
+
+[node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
+position = Vector2(-95, -42)
+chimp_test_number_data = ExtResource("4_wkw6f")
+
+[node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
+position = Vector2(34, 19)
+chimp_test_number_data = ExtResource("6_0b54d")
+
+[node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
+position = Vector2(-61, 50)
+chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="Stage3" type="Node2D" parent="ChimpTest/Stages"]
+visible = false
+
+[node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(-84, -36)
+chimp_test_number_data = ExtResource("4_wkw6f")
+
+[node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(-3, -44)
+chimp_test_number_data = ExtResource("6_0b54d")
+
+[node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(-95, 38)
+chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="ChimpTestNumber4" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(-15, 52)
+chimp_test_number_data = ExtResource("8_4r180")
+
+[node name="ChimpTestNumber5" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(91, -41)
+chimp_test_number_data = ExtResource("9_tqyxc")
+
+[node name="Stage4" type="Node2D" parent="ChimpTest/Stages"]
+visible = false
+
+[node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+chimp_test_number_data = ExtResource("4_wkw6f")
+
+[node name="Buttons" type="Node2D" parent="ChimpTest"]
+
+[node name="StartButton" type="Button" parent="ChimpTest/Buttons"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ContinueButton" type="Button" parent="ChimpTest/Buttons"]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="NextButton" type="Button" parent="ChimpTest/Buttons"]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="ChimpTest/Buttons/StartButton" to="ChimpTest" method="_on_start_button_button_down"]
+[connection signal="pressed" from="ChimpTest/Buttons/ContinueButton" to="ChimpTest" method="_on_continue_button_pressed"]

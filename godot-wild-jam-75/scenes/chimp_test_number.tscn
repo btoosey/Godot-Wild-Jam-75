@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc6oa5fixp7o"]
+
+[ext_resource type="Script" path="res://chimp_test_number.gd" id="1_56tr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkpx"]
+size = Vector2(32, 32)
+
+[node name="ChimpTestNumber" type="Node2D"]
+script = ExtResource("1_56tr6")
+
+[node name="NumberSprite" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0wkpx")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
