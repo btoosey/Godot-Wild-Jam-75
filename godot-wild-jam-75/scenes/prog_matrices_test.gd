@@ -1,11 +1,7 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@onready var sprite_2d: Sprite2D = $Sprite2D
+const PROGRESSIVE_MATRICES_1 = preload("res://assets/sprites/progressive-matrices/progressive_matrices_1.png")
+const PROGRESSIVE_MATRICES_2 = preload("res://assets/sprites/progressive-matrices/progressive_matrices_2.png")
+const PROGRESSIVE_MATRICES_3 = preload("res://assets/sprites/progressive-matrices/progressive_matrices_3.png")
+const PROGRESSIVE_MATRICES_4 = preload("res://assets/sprites/progressive-matrices/progressive_matrices_4.png")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=13 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c2dmvjlwlonnf" path="res://data/chimp_test_number_3.tres" id="7_j07kl"]
 [ext_resource type="Resource" uid="uid://d131ixsgavk2n" path="res://data/chimp_test_number_4.tres" id="8_4r180"]
 [ext_resource type="Resource" uid="uid://bcqhjoktu0u1s" path="res://data/chimp_test_number_5.tres" id="9_tqyxc"]
+[ext_resource type="Script" path="res://scenes/prog_matrices_test.gd" id="12_fu4wt"]
 
 [node name="Main" type="Node2D"]
 
@@ -110,6 +111,11 @@ offset_bottom = 8.0
 visible = false
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="ProgMatricesTest" type="Node2D" parent="."]
+script = ExtResource("12_fu4wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="ProgMatricesTest"]
 
 [connection signal="button_down" from="ChimpTest/Buttons/StartButton" to="ChimpTest" method="_on_start_button_button_down"]
 [connection signal="pressed" from="ChimpTest/Buttons/ContinueButton" to="ChimpTest" method="_on_continue_button_pressed"]
