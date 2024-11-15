@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=12 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
 [ext_resource type="PackedScene" uid="uid://cc6oa5fixp7o" path="res://scenes/chimp_test_number.tscn" id="3_1shyd"]
+[ext_resource type="Texture2D" uid="uid://clr8g8o2sg7rt" path="res://assets/sprites/rorschach-slides/rorschach_1.png" id="3_3sd6e"]
+[ext_resource type="Script" path="res://scenes/rorschach_test.gd" id="3_rsfgj"]
 [ext_resource type="Script" path="res://scenes/chimp_test.gd" id="3_th0ef"]
 [ext_resource type="Resource" uid="uid://ca6b5sgeguule" path="res://data/chimp_test_number_1.tres" id="4_wkw6f"]
 [ext_resource type="Resource" uid="uid://bmknl637urgst" path="res://data/chimp_test_number_2.tres" id="6_0b54d"]
@@ -19,6 +21,13 @@ texture = ExtResource("1_dxcp6")
 [node name="MainCamera" type="Camera2D" parent="."]
 script = ExtResource("2_jri7b")
 scrolling = true
+
+[node name="RorschachTest" type="Node2D" parent="."]
+position = Vector2(-80, 172)
+script = ExtResource("3_rsfgj")
+
+[node name="Sprite2D" type="Sprite2D" parent="RorschachTest"]
+texture = ExtResource("3_3sd6e")
 
 [node name="ChimpTest" type="Node2D" parent="."]
 position = Vector2(-56, 183)
@@ -88,6 +97,7 @@ chimp_test_number_data = ExtResource("4_wkw6f")
 [node name="Buttons" type="Node2D" parent="ChimpTest"]
 
 [node name="StartButton" type="Button" parent="ChimpTest/Buttons"]
+visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 

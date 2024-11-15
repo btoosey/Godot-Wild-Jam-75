@@ -36,7 +36,7 @@ func clear_number(number) -> void:
 	number.number_sprite.modulate.a = 1
 	number.number_sprite.texture = number.NUMBER_HIDDEN
 	number.hide()
-
+ 
 func hide_all_numbers() -> void:
 	for number in stages[current_stage - 1].get_children():
 		number.hide_number()
