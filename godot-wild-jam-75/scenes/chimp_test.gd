@@ -43,7 +43,6 @@ func hide_all_numbers() -> void:
 
 func check_if_level_complete() -> void:
 	if current_stage_selections.size() == stages[current_stage - 1].get_children().size():
-		#detect which level player is on, show either continue button or next button
 		if current_stage == stages.size():
 			next_button.show()
 		else:
