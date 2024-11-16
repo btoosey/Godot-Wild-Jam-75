@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=15 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://scenes/ui.gd" id="12_rxxwk"]
 [ext_resource type="Texture2D" uid="uid://bryw18iwji70h" path="res://assets/sprites/menu/main_menu.png" id="12_vlixe"]
 [ext_resource type="Texture2D" uid="uid://c26pt2k6jtays" path="res://assets/sprites/intro/intro_upper.png" id="14_cbuth"]
-[ext_resource type="Texture2D" uid="uid://ts7u438oxo17" path="res://assets/sprites/intro/intro_lower.png" id="15_ffntb"]
 
 [node name="Main" type="Node2D"]
 
@@ -167,16 +166,14 @@ offset_bottom = 40.0
 
 [node name="EyeUpper" type="TextureRect" parent="UI/Eyes"]
 layout_mode = 0
-offset_top = -360.0
-offset_right = 640.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("14_cbuth")
 
 [node name="EyeLower" type="TextureRect" parent="UI/Eyes"]
 layout_mode = 0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 720.0
-texture = ExtResource("15_ffntb")
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="button_down" from="ChimpTest/Buttons/StartButton" to="ChimpTest" method="_on_start_button_button_down"]
 [connection signal="pressed" from="ChimpTest/Buttons/ContinueButton" to="ChimpTest" method="_on_continue_button_pressed"]
