@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=30 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
@@ -9,13 +9,26 @@
 [ext_resource type="Theme" uid="uid://cubqh36qtjnl5" path="res://themes/test_button.tres" id="5_5f3fx"]
 [ext_resource type="Resource" uid="uid://bmknl637urgst" path="res://data/chimp_test_number_2.tres" id="6_0b54d"]
 [ext_resource type="Resource" uid="uid://c2dmvjlwlonnf" path="res://data/chimp_test_number_3.tres" id="7_j07kl"]
+[ext_resource type="Texture2D" uid="uid://dind61sm2gvtt" path="res://assets/sprites/progressive-matrices/buttons/1_button_1.png" id="7_k0gm6"]
+[ext_resource type="Texture2D" uid="uid://hrcp58sbwvo2" path="res://assets/sprites/progressive-matrices/buttons/1_button_2.png" id="8_0e57u"]
 [ext_resource type="Resource" uid="uid://d131ixsgavk2n" path="res://data/chimp_test_number_4.tres" id="8_4r180"]
+[ext_resource type="Script" path="res://scripts/answer_button.gd" id="8_yjdan"]
+[ext_resource type="Texture2D" uid="uid://uhneihm6kx7a" path="res://assets/sprites/progressive-matrices/buttons/2_button_1.png" id="9_q1gg5"]
 [ext_resource type="Resource" uid="uid://bcqhjoktu0u1s" path="res://data/chimp_test_number_5.tres" id="9_tqyxc"]
+[ext_resource type="Texture2D" uid="uid://0q2mg4lf03dr" path="res://assets/sprites/progressive-matrices/buttons/2_button_2.png" id="10_lj1e5"]
+[ext_resource type="Texture2D" uid="uid://i8o2karvm14a" path="res://assets/sprites/progressive-matrices/buttons/2_button_3.png" id="11_0n7ll"]
 [ext_resource type="Script" path="res://scenes/prog_matrices_test.gd" id="12_fu4wt"]
+[ext_resource type="Texture2D" uid="uid://cm4np5mlb4em2" path="res://assets/sprites/progressive-matrices/buttons/3_button_1.png" id="12_iwkjm"]
 [ext_resource type="Script" path="res://scenes/ui.gd" id="12_rxxwk"]
 [ext_resource type="Texture2D" uid="uid://bryw18iwji70h" path="res://assets/sprites/menu/main_menu.png" id="12_vlixe"]
+[ext_resource type="Texture2D" uid="uid://d4egpoapea7h7" path="res://assets/sprites/progressive-matrices/buttons/3_button_2.png" id="13_bqils"]
+[ext_resource type="Texture2D" uid="uid://cdf8x2ohmaddq" path="res://assets/sprites/progressive-matrices/progressive_matrices_1.png" id="13_xcmsh"]
 [ext_resource type="Texture2D" uid="uid://c26pt2k6jtays" path="res://assets/sprites/intro/intro_upper.png" id="14_cbuth"]
+[ext_resource type="Texture2D" uid="uid://ra7bbm4aaqcj" path="res://assets/sprites/progressive-matrices/buttons/3_button_3.png" id="14_j508r"]
 [ext_resource type="Texture2D" uid="uid://ts7u438oxo17" path="res://assets/sprites/intro/intro_lower.png" id="15_ffntb"]
+[ext_resource type="Texture2D" uid="uid://b5wis8ca804gs" path="res://assets/sprites/progressive-matrices/buttons/4_button_1.png" id="15_m2swm"]
+[ext_resource type="Texture2D" uid="uid://xxtrytvr7nuw" path="res://assets/sprites/progressive-matrices/buttons/4_button_2.png" id="16_u4dfa"]
+[ext_resource type="Texture2D" uid="uid://b7kvr6aekgk7a" path="res://assets/sprites/progressive-matrices/buttons/4_button_3.png" id="17_e5y5y"]
 
 [node name="Main" type="Node2D"]
 
@@ -28,8 +41,66 @@ script = ExtResource("2_jri7b")
 left_boundary = -20.0
 right_boundary = 640.0
 
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -340.0
+offset_right = 300.0
+offset_bottom = 360.0
+script = ExtResource("12_rxxwk")
+
+[node name="MenuBackground" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_vlixe")
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = 47.5
+offset_right = 79.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "START GAME"
+
+[node name="Eyes" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EyeUpper" type="TextureRect" parent="UI/Eyes"]
+layout_mode = 0
+offset_top = -360.0
+offset_right = 640.0
+texture = ExtResource("14_cbuth")
+
+[node name="EyeLower" type="TextureRect" parent="UI/Eyes"]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 720.0
+texture = ExtResource("15_ffntb")
+
 [node name="RorschachTest" type="Node2D" parent="."]
-position = Vector2(-80, 172)
+visible = false
+position = Vector2(-79, 172)
 script = ExtResource("3_rsfgj")
 
 [node name="Sprite2D" type="Sprite2D" parent="RorschachTest"]
@@ -174,7 +245,143 @@ offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "c. A snake"
 
+[node name="ProgMatricesTest" type="Node2D" parent="."]
+visible = false
+position = Vector2(-56, 172)
+script = ExtResource("12_fu4wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="ProgMatricesTest"]
+texture = ExtResource("13_xcmsh")
+
+[node name="Buttons" type="Control" parent="ProgMatricesTest"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -111.0
+offset_top = 49.0
+offset_right = -71.0
+offset_bottom = 89.0
+
+[node name="Slide1" type="Control" parent="ProgMatricesTest/Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide1"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("7_k0gm6")
+script = ExtResource("8_yjdan")
+
+[node name="Button2" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide1"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 135.0
+offset_bottom = 32.0
+texture_normal = ExtResource("8_0e57u")
+script = ExtResource("8_yjdan")
+is_correct = true
+
+[node name="Button3" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide1"]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 222.0
+offset_bottom = 32.0
+texture_normal = ExtResource("7_k0gm6")
+script = ExtResource("8_yjdan")
+
+[node name="Slide2" type="Control" parent="ProgMatricesTest/Buttons"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("9_q1gg5")
+script = ExtResource("8_yjdan")
+
+[node name="Button2" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide2"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 135.0
+offset_bottom = 32.0
+texture_normal = ExtResource("10_lj1e5")
+script = ExtResource("8_yjdan")
+
+[node name="Button3" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide2"]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 222.0
+offset_bottom = 32.0
+texture_normal = ExtResource("11_0n7ll")
+script = ExtResource("8_yjdan")
+is_correct = true
+
+[node name="Slide3" type="Control" parent="ProgMatricesTest/Buttons"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide3"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("12_iwkjm")
+script = ExtResource("8_yjdan")
+is_correct = true
+
+[node name="Button2" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide3"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 135.0
+offset_bottom = 32.0
+texture_normal = ExtResource("13_bqils")
+script = ExtResource("8_yjdan")
+
+[node name="Button3" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide3"]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 222.0
+offset_bottom = 32.0
+texture_normal = ExtResource("14_j508r")
+script = ExtResource("8_yjdan")
+
+[node name="Slide4" type="Control" parent="ProgMatricesTest/Buttons"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide4"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("15_m2swm")
+script = ExtResource("8_yjdan")
+
+[node name="Button2" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide4"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 135.0
+offset_bottom = 32.0
+texture_normal = ExtResource("16_u4dfa")
+script = ExtResource("8_yjdan")
+
+[node name="Button3" type="TextureButton" parent="ProgMatricesTest/Buttons/Slide4"]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 222.0
+offset_bottom = 32.0
+texture_normal = ExtResource("17_e5y5y")
+script = ExtResource("8_yjdan")
+is_correct = true
+
 [node name="ChimpTest" type="Node2D" parent="."]
+visible = false
 position = Vector2(-56, 183)
 script = ExtResource("3_th0ef")
 
@@ -256,69 +463,6 @@ visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="ProgMatricesTest" type="Node2D" parent="."]
-script = ExtResource("12_fu4wt")
-
-[node name="Sprite2D" type="Sprite2D" parent="ProgMatricesTest"]
-
-[node name="UI" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -340.0
-offset_right = 300.0
-offset_bottom = 360.0
-script = ExtResource("12_rxxwk")
-
-[node name="MenuBackground" type="TextureRect" parent="UI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -180.0
-offset_right = 320.0
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_vlixe")
-
-[node name="Button" type="Button" parent="UI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = 47.5
-offset_right = 79.5
-offset_bottom = 80.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "START GAME"
-
-[node name="Eyes" type="Control" parent="UI"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="EyeUpper" type="TextureRect" parent="UI/Eyes"]
-layout_mode = 0
-offset_top = -360.0
-offset_right = 640.0
-texture = ExtResource("14_cbuth")
-
-[node name="EyeLower" type="TextureRect" parent="UI/Eyes"]
-layout_mode = 0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 720.0
-texture = ExtResource("15_ffntb")
-
+[connection signal="pressed" from="UI/Button" to="UI" method="_on_button_pressed"]
 [connection signal="button_down" from="ChimpTest/Buttons/StartButton" to="ChimpTest" method="_on_start_button_button_down"]
 [connection signal="pressed" from="ChimpTest/Buttons/ContinueButton" to="ChimpTest" method="_on_continue_button_pressed"]
-[connection signal="pressed" from="UI/Button" to="UI" method="_on_button_pressed"]

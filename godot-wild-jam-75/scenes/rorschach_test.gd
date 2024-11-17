@@ -20,6 +20,7 @@ var answer_3: String
 var answer_4: String
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	sprite_2d.texture = RORSCHACH_1
 	for button in slide_1.get_children():
 		button.pressed.connect(_on_slide_1_pressed.bind(button.text))
@@ -56,3 +57,11 @@ func next_slide() -> void:
 	
 func next_test() -> void:
 	Movement.move_to_scientist()
+	await get_tree().create_timer(1.6).timeout
+	self.hide()
+	Dialogic.start("after_test_1")
+
+func _on_dialogic_signal(argument:String):
+	if argument == "start_test_1":
+		await get_tree().create_timer(1.7).timeout
+		self.show()

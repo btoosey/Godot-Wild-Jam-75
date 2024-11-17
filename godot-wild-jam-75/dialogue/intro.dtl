@@ -2,3 +2,4 @@ Is everyone ready?
 Yes?
 Okay great, let's begin.
 [signal arg="open_eyes"]
+[signal arg="start_test_1"]
