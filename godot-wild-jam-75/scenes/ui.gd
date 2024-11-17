@@ -4,6 +4,7 @@ extends Control
 @onready var button: Button = $Button
 @onready var eye_upper: TextureRect = $Eyes/EyeUpper
 @onready var eye_lower: TextureRect = $Eyes/EyeLower
+@onready var main_camera: Camera2D = $"../MainCamera"
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -36,3 +37,17 @@ func _on_dialogic_signal(argument:String):
 	if argument == "hide_ui":
 		await get_tree().create_timer(2).timeout
 		self.hide()
+		$MenuBackground.hide()
+		$Button.hide()
+		$Eyes.hide()
+	if argument == "transform_to_human":
+		self.show()
+		$Eyes.show()
+		position.x = 320
+		close_eyes()
+		await get_tree().create_timer(2).timeout
+		open_eyes()
+		await get_tree().create_timer(5).timeout
+		close_eyes()
+		await get_tree().create_timer(2).timeout
+		Dialogic.start("finale_2")

@@ -31,6 +31,7 @@ directories/dtl_directory={
 "after_test_3": "res://dialogue/after_test_3.dtl",
 "after_test_4": "res://dialogue/after_test_4.dtl",
 "finale": "res://dialogue/finale.dtl",
+"finale_2": "res://dialogue/finale_2.dtl",
 "intro": "res://dialogue/intro.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"

@@ -1,2 +1,4 @@
 [wait time="3.0"]
 Oh...?
+[wait time="1.0"]
+[signal arg="transform_to_human"]

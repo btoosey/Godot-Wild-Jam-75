@@ -1,5 +1,6 @@
 extends Node2D
 
+const HUMAN = preload("res://assets/sprites/background/human.png")
 @onready var mirror_sign: Sprite2D = $MirrorSign
 @onready var main_camera: Camera2D = $"../MainCamera"
 @onready var chimp: Sprite2D = $Chimp
@@ -29,3 +30,6 @@ func _process(delta: float) -> void:
 func _on_dialogic_signal(argument:String):
 	if argument == "show_mirror_sign":
 		mirror_sign.show()
+	if argument == "transform_to_human":
+		await get_tree().create_timer(2).timeout
+		chimp.texture = HUMAN
