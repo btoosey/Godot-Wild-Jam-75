@@ -1,3 +1,5 @@
 Abort testing...
 Subject SA662M has regained consciousness, and no longer believe's he's a chimp.
 We'll continue work tomorrow using a new subject.
+[wait time="0.8"]
+[signal arg="show_end"]

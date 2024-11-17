@@ -1,5 +1,5 @@
 if {chimp_test_score} == 5:
-	That's great work from Sam. Of course that's pretty standard for chimps, as they usually perform a lot better than humans in that last test.
+	That's great work from Sam. Exactly how chimps should be performing in these tests.
 elif {chimp_test_score} == 4:
 	Sam appears to be performing below average today.
 	Not bad for a human, but underwhelming for a chimp.

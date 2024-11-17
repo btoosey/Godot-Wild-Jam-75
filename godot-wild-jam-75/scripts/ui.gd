@@ -51,3 +51,5 @@ func _on_dialogic_signal(argument:String):
 		close_eyes()
 		await get_tree().create_timer(2).timeout
 		Dialogic.start("finale_2")
+	if argument == "show_end":
+		$TheEnd.show()

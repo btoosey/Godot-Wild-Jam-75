@@ -5,11 +5,11 @@ elif {prog_matrices_score} == 3:
 	Not bad for a chimp, 3/4 answers. This suggests that Sam has a relatively high IQ, for a chimp!
 elif {prog_matrices_score} == 2:
 	That's more or less what I expected, 2/4 answers correct. That equates to an IQ similar to a human 3 year old.
-elif :
+elif {} == "1":
 	I must admit, I'm a little disppointed to see only 1 correct answer in that last test.
 else:
 	Not a single question right in that last test...
 	Perhaps he was getting them wrong on purpose?
 Up next, we have a test in which chimps generally perform better than humans.
-Appropriately, this test is known as 'The Chimp Test'
+Appropriately, this test is known as The Chimp Test
 [signal arg="start_test_3"]

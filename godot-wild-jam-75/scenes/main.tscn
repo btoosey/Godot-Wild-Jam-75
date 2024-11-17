@@ -1,11 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=47 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
 [ext_resource type="PackedScene" uid="uid://cc6oa5fixp7o" path="res://scenes/chimp_test_number.tscn" id="3_1shyd"]
 [ext_resource type="Texture2D" uid="uid://4vawmxnyud2r" path="res://assets/sprites/background/chimp.png" id="3_n37ue"]
-[ext_resource type="Script" path="res://scenes/rorschach_test.gd" id="3_rsfgj"]
-[ext_resource type="Script" path="res://scenes/chimp_test.gd" id="3_th0ef"]
+[ext_resource type="Script" path="res://scripts/rorschach_test.gd" id="3_rsfgj"]
+[ext_resource type="Script" path="res://scripts/chimp_test.gd" id="3_th0ef"]
 [ext_resource type="Resource" uid="uid://ca6b5sgeguule" path="res://data/chimp_test_number_1.tres" id="4_wkw6f"]
 [ext_resource type="Theme" uid="uid://cubqh36qtjnl5" path="res://themes/test_button.tres" id="5_5f3fx"]
 [ext_resource type="Resource" uid="uid://bmknl637urgst" path="res://data/chimp_test_number_2.tres" id="6_0b54d"]
@@ -18,9 +18,10 @@
 [ext_resource type="Resource" uid="uid://bcqhjoktu0u1s" path="res://data/chimp_test_number_5.tres" id="9_tqyxc"]
 [ext_resource type="Texture2D" uid="uid://0q2mg4lf03dr" path="res://assets/sprites/progressive-matrices/buttons/2_button_2.png" id="10_lj1e5"]
 [ext_resource type="Texture2D" uid="uid://i8o2karvm14a" path="res://assets/sprites/progressive-matrices/buttons/2_button_3.png" id="11_0n7ll"]
-[ext_resource type="Script" path="res://scenes/prog_matrices_test.gd" id="12_fu4wt"]
+[ext_resource type="Texture2D" uid="uid://dxolm3ccwsufs" path="res://assets/sprites/menu/the_end.png" id="11_8swec"]
+[ext_resource type="Script" path="res://scripts/prog_matrices_test.gd" id="12_fu4wt"]
 [ext_resource type="Texture2D" uid="uid://cm4np5mlb4em2" path="res://assets/sprites/progressive-matrices/buttons/3_button_1.png" id="12_iwkjm"]
-[ext_resource type="Script" path="res://scenes/ui.gd" id="12_rxxwk"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="12_rxxwk"]
 [ext_resource type="Texture2D" uid="uid://bryw18iwji70h" path="res://assets/sprites/menu/main_menu.png" id="12_vlixe"]
 [ext_resource type="Texture2D" uid="uid://d4egpoapea7h7" path="res://assets/sprites/progressive-matrices/buttons/3_button_2.png" id="13_bqils"]
 [ext_resource type="Texture2D" uid="uid://cdf8x2ohmaddq" path="res://assets/sprites/progressive-matrices/progressive_matrices_1.png" id="13_xcmsh"]
@@ -40,9 +41,9 @@
 [ext_resource type="Resource" uid="uid://dlvsd5xob7tpm" path="res://data/chimp_test_number_12.tres" id="37_f5yt1"]
 [ext_resource type="Resource" uid="uid://rad6g8yev4lm" path="res://data/chimp_test_number_13.tres" id="38_r0j0l"]
 [ext_resource type="Resource" uid="uid://5811qciyw4hd" path="res://data/chimp_test_number_14.tres" id="39_y8nwq"]
-[ext_resource type="Script" path="res://scenes/banana_test.gd" id="40_3ckug"]
+[ext_resource type="Script" path="res://scripts/banana_test.gd" id="40_3ckug"]
 [ext_resource type="Texture2D" uid="uid://c7lj1em4hbjb1" path="res://assets/sprites/banana-test/banana.png" id="41_4qffn"]
-[ext_resource type="Script" path="res://scenes/mirror_test.gd" id="42_4xb8l"]
+[ext_resource type="Script" path="res://scripts/mirror_test.gd" id="42_4xb8l"]
 [ext_resource type="Texture2D" uid="uid://dc0852bhqdk8i" path="res://assets/sprites/background/mirror_sign.png" id="43_glnk6"]
 
 [sub_resource type="GDScript" id="GDScript_7xoet"]
@@ -105,11 +106,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -79.5
-offset_top = 47.5
+offset_top = 56.0
 offset_right = 79.5
-offset_bottom = 80.5
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_5f3fx")
 theme_override_font_sizes/font_size = 24
 text = "START GAME"
 
@@ -132,7 +134,25 @@ offset_right = 640.0
 offset_bottom = 720.0
 texture = ExtResource("15_ffntb")
 
+[node name="TheEnd" type="TextureRect" parent="UI"]
+visible = false
+z_index = 20
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_8swec")
+
 [node name="RorschachTest" type="Node2D" parent="."]
+visible = false
 position = Vector2(-79, 172)
 script = ExtResource("3_rsfgj")
 
@@ -148,7 +168,6 @@ offset_right = 198.0
 offset_bottom = 111.0
 
 [node name="Slide 1" type="Control" parent="RorschachTest/Buttons"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
