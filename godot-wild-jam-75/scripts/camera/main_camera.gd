@@ -25,3 +25,7 @@ func _process(delta: float) -> void:
 func move_to_monitor() -> void:
 	var move_tween = get_tree().create_tween()
 	move_tween.tween_property(self, "position", Vector2(-20,180), 1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUART)
+
+func move_to_scientist() -> void:
+	var move_tween = get_tree().create_tween()
+	move_tween.tween_property(self, "position", Vector2(432,180), 1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUART)
