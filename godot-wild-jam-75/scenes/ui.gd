@@ -33,3 +33,6 @@ func open_eyes() -> void:
 func _on_dialogic_signal(argument:String):
 	if argument == "open_eyes":
 		open_eyes()
+	if argument == "hide_ui":
+		await get_tree().create_timer(2).timeout
+		self.hide()

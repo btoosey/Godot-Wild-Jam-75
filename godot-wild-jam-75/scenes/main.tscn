@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dk1hgbkj7becm"]
+[gd_scene load_steps=40 format=3 uid="uid://dk1hgbkj7becm"]
 
 [ext_resource type="Texture2D" uid="uid://db0bvs4uvof8g" path="res://assets/sprites/background/background.png" id="1_dxcp6"]
 [ext_resource type="Script" path="res://scripts/camera/main_camera.gd" id="2_jri7b"]
@@ -29,6 +29,16 @@
 [ext_resource type="Texture2D" uid="uid://b5wis8ca804gs" path="res://assets/sprites/progressive-matrices/buttons/4_button_1.png" id="15_m2swm"]
 [ext_resource type="Texture2D" uid="uid://xxtrytvr7nuw" path="res://assets/sprites/progressive-matrices/buttons/4_button_2.png" id="16_u4dfa"]
 [ext_resource type="Texture2D" uid="uid://b7kvr6aekgk7a" path="res://assets/sprites/progressive-matrices/buttons/4_button_3.png" id="17_e5y5y"]
+[ext_resource type="Texture2D" uid="uid://540c1mmptye2" path="res://assets/sprites/chimp-test/working_memory_background.png" id="30_pr4ha"]
+[ext_resource type="Resource" uid="uid://b04cxstjf6kwm" path="res://data/chimp_test_number_6.tres" id="31_58mji"]
+[ext_resource type="Resource" uid="uid://c142usi3v5rcs" path="res://data/chimp_test_number_7.tres" id="32_os4xc"]
+[ext_resource type="Resource" uid="uid://hgq4lmuyvvh5" path="res://data/chimp_test_number_8.tres" id="33_w1t5w"]
+[ext_resource type="Resource" uid="uid://d02ig82tiogor" path="res://data/chimp_test_number_9.tres" id="34_g6rsr"]
+[ext_resource type="Resource" uid="uid://bisecj3np56r7" path="res://data/chimp_test_number_10.tres" id="35_jxo0b"]
+[ext_resource type="Resource" uid="uid://btt6ntttfqreb" path="res://data/chimp_test_number_11.tres" id="36_exn8x"]
+[ext_resource type="Resource" uid="uid://dlvsd5xob7tpm" path="res://data/chimp_test_number_12.tres" id="37_f5yt1"]
+[ext_resource type="Resource" uid="uid://rad6g8yev4lm" path="res://data/chimp_test_number_13.tres" id="38_r0j0l"]
+[ext_resource type="Resource" uid="uid://5811qciyw4hd" path="res://data/chimp_test_number_14.tres" id="39_y8nwq"]
 
 [node name="Main" type="Node2D"]
 
@@ -382,8 +392,11 @@ is_correct = true
 
 [node name="ChimpTest" type="Node2D" parent="."]
 visible = false
-position = Vector2(-56, 183)
+position = Vector2(-56, 172)
 script = ExtResource("3_th0ef")
+
+[node name="Background" type="Sprite2D" parent="ChimpTest"]
+texture = ExtResource("30_pr4ha")
 
 [node name="Stages" type="Node2D" parent="ChimpTest"]
 
@@ -395,37 +408,45 @@ position = Vector2(-95, -42)
 chimp_test_number_data = ExtResource("4_wkw6f")
 
 [node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
-position = Vector2(34, 19)
+position = Vector2(106, -5)
 chimp_test_number_data = ExtResource("6_0b54d")
 
 [node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
-position = Vector2(-61, 50)
+position = Vector2(-62, 50)
 chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="ChimpTestNumber4" parent="ChimpTest/Stages/Stage1" instance=ExtResource("3_1shyd")]
+position = Vector2(58, 50)
+chimp_test_number_data = ExtResource("8_4r180")
 
 [node name="Stage2" type="Node2D" parent="ChimpTest/Stages"]
 visible = false
 
 [node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
-position = Vector2(-95, -42)
+position = Vector2(41, -50)
 chimp_test_number_data = ExtResource("4_wkw6f")
 
 [node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
-position = Vector2(34, 19)
+position = Vector2(-64, -21)
 chimp_test_number_data = ExtResource("6_0b54d")
 
 [node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
-position = Vector2(-61, 50)
+position = Vector2(92, 66)
 chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="ChimpTestNumber4" parent="ChimpTest/Stages/Stage2" instance=ExtResource("3_1shyd")]
+position = Vector2(-66, 66)
+chimp_test_number_data = ExtResource("8_4r180")
 
 [node name="Stage3" type="Node2D" parent="ChimpTest/Stages"]
 visible = false
 
 [node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
-position = Vector2(-84, -36)
+position = Vector2(91, 25)
 chimp_test_number_data = ExtResource("4_wkw6f")
 
 [node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
-position = Vector2(-3, -44)
+position = Vector2(-62, 5)
 chimp_test_number_data = ExtResource("6_0b54d")
 
 [node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
@@ -440,29 +461,163 @@ chimp_test_number_data = ExtResource("8_4r180")
 position = Vector2(91, -41)
 chimp_test_number_data = ExtResource("9_tqyxc")
 
+[node name="ChimpTestNumber6" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(57, -8)
+chimp_test_number_data = ExtResource("31_58mji")
+
+[node name="ChimpTestNumber7" parent="ChimpTest/Stages/Stage3" instance=ExtResource("3_1shyd")]
+position = Vector2(-62, -55)
+chimp_test_number_data = ExtResource("32_os4xc")
+
 [node name="Stage4" type="Node2D" parent="ChimpTest/Stages"]
 visible = false
 
 [node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(-108, -48)
 chimp_test_number_data = ExtResource("4_wkw6f")
 
-[node name="Buttons" type="Node2D" parent="ChimpTest"]
+[node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(40, 67)
+chimp_test_number_data = ExtResource("6_0b54d")
+
+[node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(-74, -48)
+chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="ChimpTestNumber4" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(-74, 34)
+chimp_test_number_data = ExtResource("8_4r180")
+
+[node name="ChimpTestNumber5" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(72, -8)
+chimp_test_number_data = ExtResource("9_tqyxc")
+
+[node name="ChimpTestNumber6" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(-108, -14)
+chimp_test_number_data = ExtResource("31_58mji")
+
+[node name="ChimpTestNumber7" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(38, -41)
+chimp_test_number_data = ExtResource("32_os4xc")
+
+[node name="ChimpTestNumber8" parent="ChimpTest/Stages/Stage4" instance=ExtResource("3_1shyd")]
+position = Vector2(6, 67)
+chimp_test_number_data = ExtResource("33_w1t5w")
+
+[node name="Stage5" type="Node2D" parent="ChimpTest/Stages"]
+visible = false
+
+[node name="ChimpTestNumber" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(105, -42)
+chimp_test_number_data = ExtResource("4_wkw6f")
+
+[node name="ChimpTestNumber2" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(60, 20)
+chimp_test_number_data = ExtResource("6_0b54d")
+
+[node name="ChimpTestNumber3" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-112, 74)
+chimp_test_number_data = ExtResource("7_j07kl")
+
+[node name="ChimpTestNumber4" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-74, 34)
+chimp_test_number_data = ExtResource("8_4r180")
+
+[node name="ChimpTestNumber5" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-39, 87)
+chimp_test_number_data = ExtResource("9_tqyxc")
+
+[node name="ChimpTestNumber6" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-108, -14)
+chimp_test_number_data = ExtResource("31_58mji")
+
+[node name="ChimpTestNumber7" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(65, -76)
+chimp_test_number_data = ExtResource("32_os4xc")
+
+[node name="ChimpTestNumber8" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(6, 67)
+chimp_test_number_data = ExtResource("33_w1t5w")
+
+[node name="ChimpTestNumber9" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(105, 25)
+chimp_test_number_data = ExtResource("34_g6rsr")
+
+[node name="ChimpTestNumber10" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-41, -47)
+chimp_test_number_data = ExtResource("35_jxo0b")
+
+[node name="ChimpTestNumber11" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(87, 79)
+chimp_test_number_data = ExtResource("36_exn8x")
+
+[node name="ChimpTestNumber12" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-121, 24)
+chimp_test_number_data = ExtResource("37_f5yt1")
+
+[node name="ChimpTestNumber13" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(-92, -63)
+chimp_test_number_data = ExtResource("38_r0j0l")
+
+[node name="ChimpTestNumber14" parent="ChimpTest/Stages/Stage5" instance=ExtResource("3_1shyd")]
+position = Vector2(30, -34)
+chimp_test_number_data = ExtResource("39_y8nwq")
+
+[node name="Buttons" type="Control" parent="ChimpTest"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="StartButton" type="Button" parent="ChimpTest/Buttons"]
-visible = false
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.5
+offset_right = 24.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_5f3fx")
+text = "Start"
 
 [node name="ContinueButton" type="Button" parent="ChimpTest/Buttons"]
 visible = false
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -12.5
+offset_right = 39.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_5f3fx")
+text = "Continue"
 
 [node name="NextButton" type="Button" parent="ChimpTest/Buttons"]
 visible = false
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.5
+offset_right = 24.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_5f3fx")
+text = "Next"
 
 [connection signal="pressed" from="UI/Button" to="UI" method="_on_button_pressed"]
 [connection signal="button_down" from="ChimpTest/Buttons/StartButton" to="ChimpTest" method="_on_start_button_button_down"]
 [connection signal="pressed" from="ChimpTest/Buttons/ContinueButton" to="ChimpTest" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="ChimpTest/Buttons/NextButton" to="ChimpTest" method="_on_next_button_pressed"]

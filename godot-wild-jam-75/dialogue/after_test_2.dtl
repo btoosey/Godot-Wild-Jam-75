@@ -10,4 +10,6 @@ elif :
 else:
 	Not a single question right in that last test...
 	Perhaps he was getting them wrong on purpose?
-Up next, we have test 3\: The Chimp Test
+Up next, we have a test in which chimps generally perform better than humans.
+Appropriately, this test is known as 'The Chimp Test'
+[signal arg="start_test_3"]
