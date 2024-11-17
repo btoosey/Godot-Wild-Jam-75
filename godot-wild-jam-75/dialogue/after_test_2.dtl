@@ -2,7 +2,7 @@ Very interesting.
 if {prog_matrices_score} == 4:
 	That's incredibly impressive for a chimp. A perfect score!
 elif {prog_matrices_score} == 3:
-	Not bad for a chimp, 3/4 answers. This suggests that ___ has a relatively high IQ, for a chimp!
+	Not bad for a chimp, 3/4 answers. This suggests that Sam has a relatively high IQ, for a chimp!
 elif {prog_matrices_score} == 2:
 	That's more or less what I expected, 2/4 answers correct. That equates to an IQ similar to a human 3 year old.
 elif :

@@ -133,7 +133,6 @@ offset_bottom = 720.0
 texture = ExtResource("15_ffntb")
 
 [node name="RorschachTest" type="Node2D" parent="."]
-visible = false
 position = Vector2(-79, 172)
 script = ExtResource("3_rsfgj")
 
@@ -149,6 +148,7 @@ offset_right = 198.0
 offset_bottom = 111.0
 
 [node name="Slide 1" type="Control" parent="RorschachTest/Buttons"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -188,27 +188,27 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="RorschachTest/Buttons/Slide 2"]
 layout_mode = 0
-offset_left = 123.0
+offset_left = 113.0
 offset_top = 3.0
-offset_right = 224.0
+offset_right = 242.0
 offset_bottom = 28.0
 theme = ExtResource("5_5f3fx")
 text = "a. A monster"
 
 [node name="Button2" type="Button" parent="RorschachTest/Buttons/Slide 2"]
 layout_mode = 0
-offset_left = 12.0
+offset_left = 41.0
 offset_top = 36.0
-offset_right = 205.0
+offset_right = 151.0
 offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "b. A truck"
 
 [node name="Button3" type="Button" parent="RorschachTest/Buttons/Slide 2"]
 layout_mode = 0
-offset_left = 179.0
+offset_left = 172.0
 offset_top = 36.0
-offset_right = 336.0
+offset_right = 343.0
 offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "c. A monster-truck"
@@ -239,9 +239,9 @@ text = "b. Two fairies"
 
 [node name="Button3" type="Button" parent="RorschachTest/Buttons/Slide 3"]
 layout_mode = 0
-offset_left = 197.0
+offset_left = 204.0
 offset_top = 36.0
-offset_right = 313.0
+offset_right = 306.0
 offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "c. A fire"
@@ -254,27 +254,27 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="RorschachTest/Buttons/Slide 4"]
 layout_mode = 0
-offset_left = 123.0
+offset_left = 114.0
 offset_top = 3.0
-offset_right = 224.0
+offset_right = 234.0
 offset_bottom = 28.0
 theme = ExtResource("5_5f3fx")
 text = "a. A banana"
 
 [node name="Button2" type="Button" parent="RorschachTest/Buttons/Slide 4"]
 layout_mode = 0
-offset_left = 12.0
+offset_left = 29.0
 offset_top = 36.0
-offset_right = 205.0
+offset_right = 188.0
 offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "b. A moustache"
 
 [node name="Button3" type="Button" parent="RorschachTest/Buttons/Slide 4"]
 layout_mode = 0
-offset_left = 197.0
+offset_left = 202.0
 offset_top = 36.0
-offset_right = 327.0
+offset_right = 322.0
 offset_bottom = 61.0
 theme = ExtResource("5_5f3fx")
 text = "c. A snake"

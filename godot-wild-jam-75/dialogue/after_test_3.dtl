@@ -1,16 +1,16 @@
 if {chimp_test_score} == 5:
-	Great work ___. Of course that's pretty standard for chimps, as they usually perform a lot better than humans in that last test.
+	That's great work from Sam. Of course that's pretty standard for chimps, as they usually perform a lot better than humans in that last test.
 elif {chimp_test_score} == 4:
-	___ appears to be performing below average today.
+	Sam appears to be performing below average today.
 	Not bad for a human, but underwhelming for a chimp.
 elif {chimp_test_score} == 3:
-	Perhaps ___ hasn't had enough bananas today, because that didn't go well at all.
+	Perhaps Sam hasn't had enough bananas today, because that didn't go well at all.
 elif {chimp_test_score} == 2:
 	How disappointing, even humans usually manage to beat that level easily.
 elif {chimp_test_score} == 1:
 	Maybe he closed his eyes on that attempt...
 if {chimp_test_score} == 0:
-	I guess ___ didn't realise he had to click the boxes in numerical order...
+	I guess Sam didn't realise he had to click the boxes in numerical order...
 In any case, that was some good data for us to use.
-Next, we're simply going to show __ an image of a banana. Let's see how he reacts to it.
+Next, we're simply going to show Sam an image of a banana. Let's see how he reacts to it.
 [signal arg="start_test_4"]
